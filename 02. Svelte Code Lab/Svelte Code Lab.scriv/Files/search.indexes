@@ -134,11 +134,102 @@ created public/build/bundle.js in 100ms
 ~/my-svelte-project/ $ 
 
 
-#
+# Random Number
 ~/01. Week 1/ $ npx degit sveltejs/template did-thanos-kill-me
 &gt; cloned sveltejs/template#HEAD to did-thanos-kill-me
 ~/01. Week 1/ $ cd did-thanos-kill-me 
 ~/did-thanos-kill-me/ $ 
+
+
+
+# Caffee
+~/01. Week 1/ $ npx degit sveltejs/template caffee
+&gt; cloned sveltejs/template#HEAD to caffee
+~/01. Week 1/ $ cd caffe 
+~/caffe/ $ npm install svelte-routing
+
+added 8 packages, and audited 113 packages in 2s
+
+8 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+~/caffe/ $ npm run dev
+
+&gt; svelte-app@1.0.0 dev
+&gt; rollup -c -w
+
+rollup v2.79.1
+bundles src/main.js → public/build/bundle.js...
+LiveReload enabled
+created public/build/bundle.js in 134ms
+
+[2022-10-13 12:12:15] waiting for changes...
+
+&gt; svelte-app@1.0.0 start
+&gt; sirv public --no-clear "--dev"
+
+
+  Your application is ready~! 🚀
+
+  - Local:      http://localhost:8080
+  - Network:    Add `--host` to expose
+
+────────────────── LOGS ──────────────────
+
+
+
+#### package.json
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear --single",
+    "start:dev": "sirv public --dev --single"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0"
+  },
+  "dependencies": {
+    "sirv-cli": "^2.0.0",
+    "svelte-routing": "^1.6.0"
+  }
+}
+
+~/caffe/ $ npm run build
+
+&gt; svelte-app@1.0.0 build
+&gt; rollup -c
+
+
+src/main.js → public/build/bundle.js...
+created public/build/bundle.js in 504ms
+~/caffe/ $ npm run start
+
+&gt; svelte-app@1.0.0 start
+&gt; sirv public --no-clear --single
+
+
+  Your application is ready~! 🚀
+
+  - Local:      http://localhost:8080
+  - Network:    Add `--host` to expose
+
+────────────────── LOGS ──────────────────
+
+
+
+
 
 
 </Text>
