@@ -41,9 +41,15 @@
 			<dt>{ item.name }</dt>
 			<dd>
 				{ formatter.format(item.price) }
-				<button class="btn btn-sm btn-outline-primary" on:click={ () => toggleItem(item.name) }>
-					{ selected.find(element => element.name === item.name) ? 'Selected' : 'Select' }
-				</button>
+				{ #if selected.find(element => element.name === item.name )}
+					<button class="btn btn-sm btn-outline-danger" on:click={ () => toggleItem(item.name) }>
+						Selected
+					</button>
+				{ :else }
+					<button class="btn btn-sm btn-outline-primary" on:click={ () => toggleItem(item.name) }>
+						Select
+					</button>
+				{ /if }
 			</dd>
 		{ /each }
 	</dl>
@@ -58,5 +64,7 @@
 		{ /each }
 	</ul>
 
-	<p>Sum: {formatter.format(sum)}</p>
+	<p class="mb-4">Sum: {formatter.format(sum)}</p>
+
+	<button class="btn btn-lg btn-primary" on:click = { () => alert('Your order has been received.')}>Order</button>
 </div>
