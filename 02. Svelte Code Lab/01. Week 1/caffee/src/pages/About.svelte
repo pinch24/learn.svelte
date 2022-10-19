@@ -1,9 +1,7 @@
 <script>
-	import Header from '../components/Header.svelte';
+	import Layout from '../components/Layout.svelte';
 </script>
 
-<Header/>
-
-<div class="container">
-	<h1>About</h1>
-</div>
+<Layout>
+	<h1>Service Info</h1>
+</Layout>

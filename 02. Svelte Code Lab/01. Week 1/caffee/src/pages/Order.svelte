@@ -1,7 +1,5 @@
 <script>
-    import { element } from 'svelte/internal';
-    import About from '../pages/About.svelte';
-	import Header from '../components/Header.svelte';
+	import Layout from '../components/Layout.svelte';
 
 	const formatter = Intl.NumberFormat('ko-KR');
 
@@ -31,9 +29,7 @@
 	}
 </script>
 
-<Header/>
-
-<div class="container px-4">
+<Layout>
 	<h1 class="text-4xl font-bold mb-8">Order</h1>
 
 	<dl>
@@ -67,4 +63,4 @@
 	<p class="mb-4">Sum: {formatter.format(sum)}</p>
 
 	<button class="btn btn-lg btn-primary" on:click = { () => alert('Your order has been received.')}>Order</button>
-</div>
+</Layout>
