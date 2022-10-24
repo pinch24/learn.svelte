@@ -1,14 +1,13 @@
-<h1>Pony for sale</h1>
-<p class="description">2 year old Shetland pony</p>
+<script>
+	let count = 0;
+	const increment = () => count++;
+</script>
+
+<main>
+	<div>count = { count }</div>
+	<button on:click={ increment }>+</button>
+</main>
 
 <style>
-	:global(h1) {
-		color: red;
-	}
-	h1 {
-		color: green;
-	}
-	.description {
-		font-style: italic;
-	}
+	
 </style>
