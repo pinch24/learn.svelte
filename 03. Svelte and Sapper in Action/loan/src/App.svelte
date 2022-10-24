@@ -1,15 +1,28 @@
 <script>
-	let interestRate = 3;
-	let loanAmount = 200000;
-	let years = 30;
-
 	const MONTHS_PER_YEAR = 12;
 
-	$: months = years * MONTHS_PER_YEAR;
-	$: monthlyInterestRate = interestRate / 100 / MONTHS_PER_YEAR;
-	$: numerator = loanAmount * monthlyInterestRate;
-	$: denominator = 1 - (1 + monthlyInterestRate) ** -months;
-	$: payment = !loanAmount || !years ? 0 : interestRate ? numerator / denominator : loanAmount / months;
+	let interestRate, loanAmount, years;
+
+	function calculatePayment(loanAmount, interestRate, years) {
+		if (!loanAmount || !years) return 0;
+
+		const months = years * MONTHS_PER_YEAR;
+		if (!interestRate) return loanAmount / months;
+
+		const monthlyInterestRate = interestRate / 100 / MONTHS_PER_YEAR;
+		const numerator = loanAmount * monthlyInterestRate;
+		const denominator = 1 - (1 + monthlyInterestRate) ** -months;
+		return numerator / denominator;
+	}
+
+	function reset() {
+		interestRate = 3;
+		loanAmount = 200000;
+		years = 30;
+	}
+
+	reset();
+	$: payment = calculatePayment(loanAmount, interestRate, years);
 </script>
 
 <main>
@@ -25,6 +38,8 @@
 	<div>
 		Monthly Payment: ${payment.toFixed(2)}
 	</div>
+
+	<button on:click={reset}>Reset</button>
 </main>
 
 <style>

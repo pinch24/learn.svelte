@@ -1,21 +1,14 @@
-<script>
-	let status = 200;
-	let message = "This is a message.";
-
-	$: error = status >= 200;
-</script>
-
-<main>
-	<label>
-		Status <input type="number" bind:value={ status }>
-	</label>
-
-	<div class:error>{ message }</div>
-</main>
+<h1>Pony for sale</h1>
+<p class="description">2 year old Shetland pony</p>
 
 <style>
-	.error {
+	:global(h1) {
 		color: red;
-		font-weight: bold;
+	}
+	h1 {
+		color: green;
+	}
+	.description {
+		font-style: italic;
 	}
 </style>
