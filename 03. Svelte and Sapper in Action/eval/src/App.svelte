@@ -1,12 +1,13 @@
 <script>
-	$: isTeen = 13 <= age && age < 20;
-	$: upperName = name.toUpperCase();
+	import { onMount } from 'svelte';
+	import { add } from './Demo.svelte';
+
+	onMount(() => {
+		const sum = add(1, 3);
+		console.log("sum = ", sum);
+	});
 </script>
 
 <main>
-	
+	Hello, world!
 </main>
-
-<style>
-	
-</style>
