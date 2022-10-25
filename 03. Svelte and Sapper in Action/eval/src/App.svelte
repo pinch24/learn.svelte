@@ -1,11 +1,10 @@
 <script>
-	let count = 0;
-	const increment = () => count++;
+	$: isTeen = 13 <= age && age < 20;
+	$: upperName = name.toUpperCase();
 </script>
 
 <main>
-	<div>count = { count }</div>
-	<button on:click={ increment }>+</button>
+	
 </main>
 
 <style>
